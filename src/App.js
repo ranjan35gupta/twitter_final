@@ -12,6 +12,7 @@ import PrivateRouting from './Components/Routing/PrivateRouting';
 
 function App() {
   const navigate = useNavigate()
+  
 
   const values = useSelector(state=>state.localData)
   const {isLoggedIn1} = values
@@ -21,8 +22,9 @@ function App() {
       
        <Routes>
        <Route path='/' element={<LoginPage/>}/>
-        <Route path='/signup' element={<SignUp/>}/>
     
+        <Route path='/signup' element={<SignUp/>}/>
+        
         <Route
           path="/home"
           element={

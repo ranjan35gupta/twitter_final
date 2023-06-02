@@ -62,6 +62,7 @@ const {  tweeterUserName} = values
 
 
   const handlePoplogout = ()=>{
+    localStorage.setItem("isAuth", JSON.stringify(false));
     navigate('/')
   }
 

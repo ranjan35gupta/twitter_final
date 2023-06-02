@@ -102,6 +102,7 @@ const [username, setUsername] = useState("");
   localStorage.setItem(phone, 'registered');
   localStorage.setItem(email, 'registered');
   dispatch(addUserChange([{name1:username}]))
+  localStorage.setItem("isAuth", JSON.stringify(true));
   alert("you are successfully registered")
   navigate('/home');
   

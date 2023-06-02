@@ -37,8 +37,8 @@ const dataSlice = createSlice({
              },
         checkLoggedIn:(state,action)=>{
             
-            const {loca1}=action.payload
-            const valuesofuser = loca1
+            const loca1=action.payload
+            const valuesofuser = loca1.flat()
             const asUser = state.userData
             // console.log(valuesofuser,"this this this")
             // console.log(asUser,"lkajoeia")

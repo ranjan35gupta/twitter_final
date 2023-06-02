@@ -14,6 +14,8 @@ import { useEffect } from 'react';
 
 
 function LoginPage() {
+  const navigate = useNavigate()
+
   const  [isPasswordEnter,setisPasswordEnter] = useState(false)
   const values = useSelector(state=>state.localData)
   
@@ -21,12 +23,19 @@ function LoginPage() {
   
   console.log(isLoggedIn,"i amm")
   const dispatch = useDispatch()
-  const loca =JSON.parse(localStorage.data)
+  let loca = [{ name1: " ", email1: " ", number1: " ",password1:" " }]
+    console.log(localStorage.data)
+  if(localStorage.data!==undefined){
+  
+   loca =JSON.parse(localStorage.data)}
+  //  else{
+    
+  //   navigate('/signup')
+  //  }
+ 
+    
  
   useEffect(()=>{
-    
-    
-    
     dispatch(addData(localStorage.data))
     
   })
@@ -43,8 +52,10 @@ const [nxtBtn1, setNxtBtn1] = useState(false)
   
   const handleNext = () =>{
     setNxtBtn(true)
-    dispatch(checkLoggedIn({loca1:loca}))
-    // dispatch(checkLoggedIn(loca))
+    
+    // dispatch(checkLoggedIn({loca1:loca}))
+    
+    dispatch(checkLoggedIn([loca]))
     setNxtBtn1(false)
   }
 
@@ -52,8 +63,7 @@ const [nxtBtn1, setNxtBtn1] = useState(false)
   alert("please fill the data")
  }
 
-  const navigate = useNavigate()
-
+  
   const handlePasswordChange = ()=>{
    setisPasswordEnter(true)
   }
